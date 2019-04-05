@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ing.model.Stock;
+import com.ing.model.StockDetails;
 import com.ing.model.User;
+import com.ing.repository.StockDetailsRepository;
 import com.ing.repository.StockRepository;
 import com.ing.repository.UserRepository;
 
@@ -18,6 +20,9 @@ public class TradeServiceImpl implements TradeService{
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@Autowired
+	StockDetailsRepository stockDetailsRepository;
 
 	@Override
 	public List<Stock> getStocks() {
@@ -25,9 +30,8 @@ public class TradeServiceImpl implements TradeService{
 	}
 
 	@Override
-	public List getPurchaseHistory() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<StockDetails> getPurchaseHistory(long userId) {
+		return stockDetailsRepository.findByUserId(userId);
 	}
 
 	@Override

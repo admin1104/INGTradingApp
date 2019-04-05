@@ -11,6 +11,7 @@ public class StockDetailServiceImpl implements StockDetailsService {
 
 	@Autowired
 	StockDetailsRepository stockDetailsRepository;
+	
 	@Override
 	public StockDetails purchseStock(StockDetails stockDetails) {
 		// TODO Auto-generated method stub

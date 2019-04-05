@@ -28,6 +28,7 @@ public class TadeController {
 	
 	@Autowired
 	StockDetailsService stockDetailsService;
+
 	
 	@GetMapping("/stocks")
 	public List<Stock> loadStocks(){
@@ -41,12 +42,17 @@ public class TadeController {
 	
 	@GetMapping("/purchaseHistory/{userId}")
 	public List<ReviewOrderResponse> loadPurchaseHistory(@PathVariable long userId){
-		return tradeService.getPurchaseHistory();
+		List<StockDetails> stockDetails = tradeService.getPurchaseHistory(userId);
+		
+		return null;
 	}
-
+	
 	@PostMapping("/buyStocks")
 	public StockDetails saveStockDetails(@RequestBody StockDetails stockDetails){
 		
 		return stockDetailsService.purchseStock(stockDetails);
 	}
+	
+	
+
 }

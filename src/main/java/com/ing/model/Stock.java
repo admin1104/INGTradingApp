@@ -41,8 +41,17 @@ public class Stock implements Serializable{
 	public void setStockName(String stockName) {
 		this.stockName = stockName;
 	}
-	
-	
+
+	public Stock(long stockId, String stockName) {
+		super();
+		this.stockId = stockId;
+		this.stockName = stockName;
+	}
+
+	public Stock() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 
 }
