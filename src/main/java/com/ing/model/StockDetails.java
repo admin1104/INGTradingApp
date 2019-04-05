@@ -29,7 +29,7 @@ public class StockDetails {
 	private double stockPrice;
 	
 	@Column(name="brokerage_fee")
-	private double brokerage_fee;
+	private double brokerageFee;
 	
 	@Column(name="total_price")
 	private double totalPrice;
@@ -97,14 +97,14 @@ public class StockDetails {
 
 
 
-	public double getBrokerage_fee() {
-		return brokerage_fee;
+	public double getBrokerageFee() {
+		return brokerageFee;
 	}
 
 
 
-	public void setBrokerage_fee(double brokerage_fee) {
-		this.brokerage_fee = brokerage_fee;
+	public void setBrokerageFee(double brokerageFee) {
+		this.brokerageFee = brokerageFee;
 	}
 
 
