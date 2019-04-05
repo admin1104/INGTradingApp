@@ -16,8 +16,8 @@ public class StockDetails {
 	@Column(name="stock_details_id")
 	private Long stockDetailsId;
 	
-	@Column(name="stock_id")
-	private Long stockId;
+	@Column(name="stock_Name")
+	private String stockName;
 	
 	@Column(name="user_id")
 	private Long userId;
@@ -51,14 +51,16 @@ public class StockDetails {
 	}
 
 
-	public Long getStockId() {
-		return stockId;
+	
+	public String getStockName() {
+		return stockName;
 	}
 
 
-	public void setStockId(Long stockId) {
-		this.stockId = stockId;
+	public void setStockName(String stockName) {
+		this.stockName = stockName;
 	}
+
 
 	public Long getUserId() {
 		return userId;

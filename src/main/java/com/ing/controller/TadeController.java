@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ing.dto.ReviewOrderResponse;
 import com.ing.model.Stock;
 import com.ing.model.StockDetails;
 import com.ing.model.User;
@@ -41,15 +40,12 @@ public class TadeController {
 	}
 	
 	@GetMapping("/purchaseHistory/{userId}")
-	public List<ReviewOrderResponse> loadPurchaseHistory(@PathVariable long userId){
-		List<StockDetails> stockDetails = tradeService.getPurchaseHistory(userId);
-		
-		return null;
+	public List<StockDetails> loadPurchaseHistory(@PathVariable long userId){
+		return tradeService.getPurchaseHistory(userId);
 	}
 	
 	@PostMapping("/buyStocks")
 	public StockDetails saveStockDetails(@RequestBody StockDetails stockDetails){
-		
 		return stockDetailsService.purchseStock(stockDetails);
 	}
 	
