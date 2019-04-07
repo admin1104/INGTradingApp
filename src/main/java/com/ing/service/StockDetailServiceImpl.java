@@ -14,7 +14,7 @@ public class StockDetailServiceImpl implements StockDetailsService {
 	
 	@Override
 	public StockDetails purchseStock(StockDetails stockDetails) {
-		int units=stockDetails.getUnits();
+		/*int units=stockDetails.getUnits();
         double stockPrice=stockDetails.getStockPrice();
         double brokerageFee=stockDetails.getBrokerageFee();
         double totalPrice=stockDetails.getTotalPrice();
@@ -28,7 +28,7 @@ public class StockDetailServiceImpl implements StockDetailsService {
         }
         stockDetails.setBrokerageFee(brokerageFee);
         totalPrice=(brokerageFee+stockPrice)*units;
-        stockDetails.setTotalPrice(totalPrice);
+        stockDetails.setTotalPrice(totalPrice);*/
         return stockDetailsRepository.save(stockDetails);
 
 	}
