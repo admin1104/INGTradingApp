@@ -13,7 +13,7 @@ public interface StockDetailsRepository extends JpaRepository<StockDetails, Long
 	
 	public List<StockDetails> findByUserId(long userId);
 	
-	@Query(value="select sd.stock_name, SUM(sd.units) as units from stock_details sd where DATE(sd.purchase_date)=DATE(NOW()) group by sd.stock_name where purchage_date", nativeQuery = true)
+	@Query(value="select sd.stock_name, SUM(sd.units) as units from stock_details sd where DATE(sd.purchase_date)=DATE(NOW()) group by sd.stock_name", nativeQuery = true)
 	public List<Object[]> getDailyStockDetails();
 	
 
