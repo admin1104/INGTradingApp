@@ -50,6 +50,20 @@
 		</dependency>
 		
 	</dependencies>
+	<distributionManagement> 
+     <repository> 
+       <id>one</id> 
+       <name>Projectname</name> 
+        
+<url>http://52.66.210.137:8081/repository/ingtrading</url>
+    </repository> 
+    <snapshotRepository> 
+      <id>nexus</id> 
+      <name> Projectname </name> 
+      <url>http://52.66.210.137:8081/repository/ingtradingrelease/</url> 
+    </snapshotRepository> 
+</distributionManagement> 
+	
 
 	<build>
 		<plugins>
