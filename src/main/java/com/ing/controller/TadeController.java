@@ -50,7 +50,7 @@ public class TadeController {
 		return stockDetailsService.purchseStock(stockDetails);
 	}
 	
-	@GetMapping("/dailyStockAnalytics")
+	@PostMapping("/dailyStockAnalytics")
 	public List<DailyStockAnalyticsResponse> getDailyStockAnalytics(){
 		return tradeService.getDailyStockAnalytics();
 	}
