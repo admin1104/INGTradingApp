@@ -15,6 +15,7 @@ import com.ing.dto.DailyStockAnalyticsResponse;
 import com.ing.model.Stock;
 import com.ing.model.StockDetails;
 import com.ing.model.User;
+import com.ing.service.IndvidualStockAnalysisService;
 import com.ing.service.StockDetailsService;
 import com.ing.service.TradeService;
 
@@ -28,7 +29,9 @@ public class TadeController {
 	
 	@Autowired
 	StockDetailsService stockDetailsService;
-
+	
+	@Autowired
+	IndvidualStockAnalysisService indvidualStockAnalysisService;
 	
 	@GetMapping("/stocks")
 	public List<Stock> loadStocks(){
@@ -55,6 +58,17 @@ public class TadeController {
 		return tradeService.getDailyStockAnalytics();
 	}
 	
+	@GetMapping("/stockAnalytics/{stockName}")
+	public DailyStockAnalyticsResponse loadStockAnalytics(@PathVariable String stockName){
+		
+		DailyStockAnalyticsResponse dto = new DailyStockAnalyticsResponse();
+		
+		int count =  indvidualStockAnalysisService.lastHourCount(stockName);
+		
+		dto.setStringName(stockName);
+		dto.setUnits(""+count);
 	
+		return dto;
+	}
 
 }
