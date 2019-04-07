@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.ing.dto.DailyStockAnalyticsResponse;
 import com.ing.model.Stock;
 import com.ing.model.StockDetails;
 import com.ing.model.User;
@@ -47,6 +48,11 @@ public class TadeController {
 	@PostMapping("/buyStocks")
 	public StockDetails saveStockDetails(@RequestBody StockDetails stockDetails){
 		return stockDetailsService.purchseStock(stockDetails);
+	}
+	
+	@PostMapping("/dailyStockAnalytics")
+	public List<DailyStockAnalyticsResponse> getDailyStockAnalytics(){
+		return tradeService.getDailyStockAnalytics();
 	}
 	
 	
