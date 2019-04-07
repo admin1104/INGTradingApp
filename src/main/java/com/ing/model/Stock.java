@@ -25,6 +25,9 @@ public class Stock implements Serializable{
 	
 	@Column(name="stock_name")
 	private String stockName;
+	
+	@Column(name="description")
+	private String description;
 
 	public long getStockId() {
 		return stockId;
@@ -42,10 +45,19 @@ public class Stock implements Serializable{
 		this.stockName = stockName;
 	}
 
-	public Stock(long stockId, String stockName) {
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public Stock(long stockId, String stockName, String description) {
 		super();
 		this.stockId = stockId;
 		this.stockName = stockName;
+		this.description = description;
 	}
 
 	public Stock() {
